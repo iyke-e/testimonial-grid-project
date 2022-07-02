@@ -108,7 +108,7 @@ section {
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
     section {
         grid-template-columns: clamp(16em, 23%, 22em) clamp(16em, 23%, 22em);
         grid-template-areas: "p p" "g db" " sw db" " w w";
