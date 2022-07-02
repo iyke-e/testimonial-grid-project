@@ -121,4 +121,8 @@ section {
         grid-template-columns: 100%;
         grid-template-areas: "p " "g " " sw" " db" " w";
     }
+    .purple {
+        background-image: url(images/bg-pattern-quotation.svg);
+        background-position: top 0 right 1.5em;
+    }
 }
