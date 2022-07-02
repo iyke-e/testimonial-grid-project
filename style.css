@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+body {
+    display: grid;
+    place-content: center;
+    background-color: var(--Light-grayish-blue);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    min-height: 100vh;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+p {
+    font-size: 13px;
+}
+
+li {
+    list-style: none;
+}
+
+section {
+    display: grid;
+    grid-template-areas: "p p g w" "sw db db w";
+    grid-template-columns: clamp(15em, 23%, 21em) clamp(15em, 23%, 21em) clamp(15em, 23%, 21em) clamp(15em, 23%, 21em);
+    gap: 2em;
+    place-content: center;
+    padding: 3rem;
+}
+
+.card {
+    padding: 2em;
+    border: transparent;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    color: var(--White);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.card p {
+    opacity: 70%;
+}
+
+.card small {
+    opacity: 50%;
+}
+
+.card .name {
+    display: flex;
+    gap: 1em;
+}
+
+.card .name img {
+    border-radius: 50%;
+    width: 2em;
+}
+
+.purple {
+    background-image: url(images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: top 0 right 7em;
+    background-color: var(--Moderate-violet);
+    grid-area: p;
+}
+
+.grey {
+    background-color: var(--Very-dark-grayish-blue);
+    grid-area: g;
+}
+
+.white {
+    background-color: var(--White);
+    color: var(--Very-dark-grayish-blue);
+    grid-area: w;
+}
+
+.small-white {
+    background-color: var(--White);
+    color: var(--Very-dark-grayish-blue);
+    grid-area: sw;
+}
+
+.deep-blue {
+    background-color: var(--Very-dark-blackish-blue);
+    grid-area: db;
+}
+
+@media (max-width: 1000px) {
+    section {
+        grid-template-columns: clamp(16em, 23%, 22em) clamp(16em, 23%, 22em) clamp(16em, 23%, 22em);
+        grid-template-areas: "p p g" "sw db db" "w w w";
+    }
+}
+
+@media (max-width: 700px) {
+    section {
+        grid-template-columns: clamp(16em, 23%, 22em) clamp(16em, 23%, 22em);
+        grid-template-areas: "p p" "g db" " sw db" " w w";
+    }
+}
+
+@media (max-width: 500px) {
+    section {
+        padding: 2em;
+        grid-template-columns: 100%;
+        grid-template-areas: "p " "g " " sw" " db" " w";
+    }
+}
